@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+// const withAuth = require('../../utils/auth');
 
 // get all users
-router.get('/', (req, res) => {
+router.get('/',  (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
   })
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id',  (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
@@ -33,7 +34,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/',  (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,

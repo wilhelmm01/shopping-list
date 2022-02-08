@@ -1,0 +1,56 @@
+body {
+    background-color: #fcfbed;
+
+}
+
+header {
+    background-color: rgba(0, 128, 128, 0.452);
+}
+
+h1 {
+    text-align: center;
+    text-shadow: rgb(88, 88, 102);
+    color: black;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+nav {
+    float: right;
+    color: black;
+    background-color: rgba(0, 128, 128, 0.027);
+    padding-bottom: 15px;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; 
+    flex-direction: column;
+}
+
+button {
+    background-color:rgba(0, 128, 128, 0.452);
+    color:rgb(88, 88, 102);
+    transition: background-color .1s;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+}
+
+footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    font-size: 110%;
+    color:rgba(0, 128, 128, 0.678);
+}
+
+main p {
+    padding-left: 460px;
+    padding-top: 100px;
+}
