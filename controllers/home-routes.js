@@ -1,20 +1,20 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
+// const withAuth = require('../utils/auth');
 
 
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
   res.render('homepage');
 });
 
-router.get('/login', withAuth,(req, res) => {
+router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/new-user', withAuth, (req, res) => {
+router.get('/new-user',  (req, res) => {
   res.render('signup');
 });
 
-router.get('/signin', withAuth, (req, res) => {
+router.get('/signin', (req, res) => {
   res.render('shopping');
 });
 

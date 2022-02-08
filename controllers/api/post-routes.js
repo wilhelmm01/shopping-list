@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
-const withAuth = require('../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 
 // get all users
-router.get('/', withAuth, (req, res) => {
+router.get('/',  (req, res) => {
   Post.findAll({
     attributes: ['id', 'post_url', 'title', 'created_at'],
     order: [['created_at', 'DESC']],
@@ -22,7 +22,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/:id', withAuth,(req, res) => {
+router.get('/:id', (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -48,7 +48,7 @@ router.get('/:id', withAuth,(req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
@@ -62,7 +62,7 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   Post.update(
     {
       title: req.body.title
@@ -86,7 +86,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
