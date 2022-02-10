@@ -54,3 +54,14 @@ main p {
     padding-left: 460px;
     padding-top: 100px;
 }
+
+.new-item {
+    border: 5px;
+    border: inline;
+    border: solid;
+    border-color: #faf5bc;
+}
+
+#btn {
+    background-color:rgba(0, 128, 128, 0.678);
+}
