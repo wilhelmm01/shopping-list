@@ -56,5 +56,9 @@ router.get('/signin', (req, res) => {
   res.render('shopping');
 });
 
+router.get('/homepage', (req, res) => {
+  res.render('homepage');
+});
+
 
 module.exports = router;

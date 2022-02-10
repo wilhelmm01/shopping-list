@@ -3,6 +3,20 @@
             <div class ="title">
                 <a href="{{post_url}}" target="_blank">{{title}}</a>
                 <span>{{post_url}}</span>
+
+                <div>
+                 {{#if loggedIn}}
+                <a href="/views/layouts/main.handlebars">dashboard</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                 <a href="/login">Login</a>
+                {{/if}}
+                </div>
+                <div>
+                     <nav>
+                <a href="/new-user">New User</a>
+                </nav>
+                </div>
                 <p>Welcome to Shopping Planner! This is an application <br> designed to make your shopping experience <br>smooth and efficient! <br>
                 With built in ability to add, store and create <br> new shopping lists you can take<br> with you on the go; you are sure not <br> 
                 forget an item on your list again. </p>
