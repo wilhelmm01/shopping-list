@@ -1,11 +1,13 @@
 const seedList = require('../seeds/shopping')
-const seedPosts = require('./post-seeds');
+const seedUser = require('../seeds/user')
+const sequelize = require('../config/connection')
 const seedAll = async () => {
+
     await sequelize.sync({ force: true });
     console.log('--------------');
     await seedList();
     console.log('--------------');
-    await seedPosts();
+    await seedUser();
     console.log('--------------');
 
 
