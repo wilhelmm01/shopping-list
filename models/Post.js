@@ -12,16 +12,14 @@ Post.init(
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    Item: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    post_url: {
+    price: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: {
-        isURL: true
-      }
+
     },
     user_id: {
       type: DataTypes.INTEGER,
