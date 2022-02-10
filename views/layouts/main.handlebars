@@ -14,10 +14,14 @@
       <h1>
         <a href="/">Shopping Planner</a>
       </h1>
-    <nav>
-      <a href="/login">Login</a>
-      
-    </nav>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/shopping-list">shopping</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
     <nav>
       <a href="/new-user">New User</a>
     </nav>
@@ -32,7 +36,9 @@
       <p>Thank you for using Shopping Planner!</p>
     </footer>
   </div>
-  
+  {{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
