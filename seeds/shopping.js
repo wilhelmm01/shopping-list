@@ -1,4 +1,4 @@
-const { List } = require('../models');
+const { Post } = require('../models');
 
 const shoppingList = [
     {
@@ -41,6 +41,6 @@ const shoppingList = [
     
   ];
   
-  const seedList = () => List.bulkCreate(shoppingList);
+  const seedList = () => Post.bulkCreate(shoppingList);
   
   module.exports = seedList;
