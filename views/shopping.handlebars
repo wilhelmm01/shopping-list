@@ -1,28 +1,38 @@
 {{!-- <h1>This is our awesome shopping list</h1> --}}
 
-
+<div id="logout">
+    <nav class="logout">
+        <a href="/homepage">Logout</a>
+    </nav>
+    <!--This is where the checked or added items go-->
+</div>
 <section>
+    <div class="Parent">
+        <div class="child1">
+            <center>
+                <form class="new-item">
+                        <h4>Shopping List</h4>
 
-    <form class="new-item">
-        <div>
-            <h4>Previous Items</h4>
-            <!--Prior list from login-->
+                    <div>
+                        <label for="new-item">Item</label>
+                        <input  type="text" id="new-item" name="new-item" />
+                    </div>
+                    <button type="submit" class="btn">Add Item</button>
+                </form>
+            </center>
         </div>
-        <div>
-            <h4>Shopping List</h4>
-                 <nav>
-                <a href="/homepage">Logout</a>
-                </nav>
-            <!--This is where the checked or added items go-->
-        </div>
-        
-        <div> 
-            <label for="new-item">Item</label>
-            <input type="text" id="new-item" name="new-item"/>
-        </div>
-        <button type="submit" class="btn">Add Item</button>
-    </form>
 
 
+        <div class="child2">
+            <center>
+                <form class="previousItem">
+                    <div id="previous">
+                        <h4>Previous Items</h4>
+                        <!--Prior list from login-->
+                    </div>
+                </form>
+            </center>
+        </div>
+    </div>
 </section>
 <script src="/javascript/add-item.js"></script>

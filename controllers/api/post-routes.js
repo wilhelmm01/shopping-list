@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 
 // get all users
-router.get('/',  (req, res) => {
+router.get('/', withAuth, (req, res) => {
   Post.findAll({
     attributes: ['id', 'post_url', 'title', 'created_at'],
     order: [['created_at', 'DESC']],
@@ -22,7 +22,7 @@ router.get('/',  (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id
@@ -48,7 +48,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
@@ -75,7 +75,7 @@ router.put('/:id', (req, res) => {
   )
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No post item found with this name' });
         return;
       }
       res.json(dbPostData);
@@ -86,7 +86,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
@@ -94,7 +94,7 @@ router.delete('/:id', (req, res) => {
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No item found with this name' });
         return;
       }
       res.json(dbPostData);
