@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
       'Item',
       'price' , 
       'created_at',
+      'user_id',
       [sequelize.literal('(SELECT COUNT(*) FROM post WHERE post.id = id)'), 'post_count']
     ],
     include: [

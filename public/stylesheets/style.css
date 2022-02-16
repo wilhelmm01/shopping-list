@@ -12,7 +12,7 @@ header {
 h1 {
     text-align: center;
     /* text-shadow: rgb(88, 88, 102); */
-    color: rgb(255, 255, 255);
+    /* color: rgb(14, 3, 117); */
     font-size: 40px;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -45,7 +45,7 @@ button {
 }
 
 footer {
-    border-top: 1px solid rgb(95, 78, 248);
+    border-top: 5px solid rgb(14, 3, 117);
     display: flex;
     justify-content: center;
     padding: 1%;
@@ -65,7 +65,7 @@ main p {
     border-right: 1px;
     border: inline;
     border: solid;
-    border-color: rgba(3, 117, 117, 0.925);
+    border-color: rgb(14, 3, 117);
 }
 
 #btn {
@@ -73,13 +73,32 @@ main p {
     color: white;
 }
 
-.logout {
-    /* border: 5px; */
-    /* border: inset; */
-    /* border-color:rgba(0, 128, 128, 0.452); */
-    /* background-color:rgba(6, 252, 252, 0.925); */
+#signup-form {
+    text-align: left;
+}
 
+.email-signup {
+    border: inset;
+    border: solid;
+    border-color:rgb(14, 3, 117);
+}
 
+.username-signup {
+    border: inset;
+    border: solid;
+    border-color:rgb(14, 3, 117);
+}
+
+.password-signup {
+    border: inset;
+    border: solid;
+    border-color:rgb(14, 3, 117);
+}
+
+.addItems-input {
+    border: inset;
+    border: solid;
+    border-color:rgb(14, 3, 117);
 }
 
 .previousItem {
@@ -89,6 +108,5 @@ main p {
     border-left: 1px;
     border: inline;
     border: solid;
-    border-color: rgba(3, 117, 117, 0.925);
+    border-color: rgb(14, 3, 117);
 }
-
