@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 // get all users
 router.get('/', withAuth, (req, res) => {
   Post.findAll({
-    attributes: ['id','created_at'],
+    attributes: ['id','created_at', 'user_id'],
     order: [['created_at', 'DESC']],
     include: [
       {

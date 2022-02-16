@@ -2,14 +2,17 @@ const { Post } = require('../models');
 
 const shoppingList = [
     {
+      user_id: 1,
       Item: 'Milk $2.99',
       price: 2.99,
-     
       
     },
     {
+      user_id: 1,
       Item: 'Paper Towels',
       price: 3,
+    
+      
       
       
     },
