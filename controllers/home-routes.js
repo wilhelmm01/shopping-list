@@ -49,7 +49,7 @@ router.get('/login', (req, res) => {
     return;
   }
   
-  res.render('login');
+  res.render('previous');
 });
 
 router.get('/login', (req, res) => {
@@ -60,9 +60,9 @@ router.get('/new-user',  (req, res) => {
   res.render('signup');
 });
 
-// router.get('/signin', (req, res) => {
-//   res.render('shopping');
-// });
+router.get('/signin', (req, res) => {
+  res.render('previous');
+});
 
 router.get('/homepage', (req, res) => {
   res.render('homepage');
