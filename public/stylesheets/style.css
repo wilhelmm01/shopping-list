@@ -110,3 +110,7 @@ main p {
     border: solid;
     border-color: rgb(14, 3, 117);
 }
+
+ul {
+    list-style-type: none;
+}
