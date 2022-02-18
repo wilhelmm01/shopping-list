@@ -44,13 +44,21 @@
             <center>
                 <form class="previousItem">
                     <div id="previous">
-                     
                         <h4>Previous Items</h4>
-                    
-                        <a href="/post/{{Item}}"> {{shoppingList.Item}} </a>
-                        
-                    
-                        <!--Prior list from login-->
+                            <div>
+                                <ol class="">
+                                {{#each posts}}
+                                <li>
+                                <article class="">
+                                    <div class="prevlist">
+                                        <div>{{Item}} </div>
+                                        <div> Price ${{price}}</div>
+                                    </div>
+                                </article>
+                                </li>
+                                {{/each}}
+                                </ol> 
+                            </div>
                     </div>
                     
                 </form>

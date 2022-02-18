@@ -114,3 +114,12 @@ main p {
 ul {
     list-style-type: none;
 }
+
+ol {
+    list-style-type: none;
+}
+
+.prevlist {
+    display: flex;
+    justify-content: center;
+}

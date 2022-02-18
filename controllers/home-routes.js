@@ -7,7 +7,6 @@ router.get('/signin', (req, res) => {
   res.render('shopping');
 });
 
-
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -15,7 +14,6 @@ router.get('/', (req, res) => {
       'Item',
       'price' , 
       'created_at',
-      'user_id',
       [sequelize.literal('(SELECT COUNT(*) FROM post WHERE post.id = id)'), 'post_count']
     ],
     include: [
@@ -26,21 +24,50 @@ router.get('/', (req, res) => {
     ]
   })
   .then(dbPostData => {
-    // pass a single post object into the homepage
-    const posts = dbPostData.map(post => post.get({ plain: true }));
-   
-
-    console.log(dbPostData[0]);
-    res.render('homepage', {
-      posts,
-      loggedIn: req.session.loggedIn
-    });
+    //pass a single post object into the homepage
+   const posts = dbPostData.map(post => post.get({ plain: true }));
+  //  console.log(dbPostData[0]);
+    res.render('homepage',{posts})
+     // posts,
+      //loggedIn: req.session.loggedIn
   })
+  
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+ });
+})
+//is this needed
+router.get('/login', (req, res) => {
+  Post.findAll({
+    attributes: [
+      'id',
+      'Item',
+      'price' , 
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM post WHERE post.id = id)'), 'post_count']
+    ],
+    include: [
+      {
+      model: User,
+      attributes: ['username']
+      }
+    ]
+  })
+  .then(dbPostData => {
+    //pass a single post object into the homepage
+   const posts = dbPostData.map(post => post.get({ plain: true }));
+   console.log(dbPostData[0]);
+    res.render('shopping',{posts})
+     // posts,
+      //loggedIn: req.session.loggedIn
+  })
+  
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
   });
-});
+})
 
 
 router.get('/login', (req, res) => {
@@ -48,8 +75,7 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-  
-  res.render('previous');
+  res.render('shopping');
 });
 
 router.get('/login', (req, res) => {
