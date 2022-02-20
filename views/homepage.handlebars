@@ -1,53 +1,43 @@
-<article class="post">
-    <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>{{post_url}}</span>
-
+{{!-- <div class="container"> --}}
+    {{!-- <div class="row"> --}}
         <article class="post">
-            <!-- <div class ="title">
+            <div class="title">
                 <a href="{{post_url}}" target="_blank">{{title}}</a>
                 <span>{{post_url}}</span>
 
-                <div>-->
-            {{#if loggedIn}}
-            <a href="/views/layouts/main.handlebars">dashboard</a>
-            <button id="logout" class="btn-no-style">Logout</button>
-            {{else}}
-            <div>
-                <label for="email-login">email:</label>
-                <input type="text" id="email-login" />
-            </div>
-            <div>
-                <label for="password-login">password:</label>
-                <input type="password" id="password-login" />
-            </div>
-            <a href="/login">Login</a>
-            {{/if}}
-    </div>
-    <div id="new-user">
-        {{!-- <nav> --}}
-            <a href="/new-user">New User</a>
-        {{!-- </nav> --}}
-    </div>
-    <p>Welcome to Shopping Planner! This is an application <br> designed to make your shopping experience <br>smooth
-        and efficient! <br>
-        With built in ability to add, store and create <br> new shopping lists that you can take<br> with you on the go;
-        you are sure not <br>
-        forget an item on your list again. </p>
+                {{!-- <div class="col-md-6"> --}}
+                    {{#if loggedIn}}
+                    <a href="/views/layouts/main.handlebars">dashboard</a>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                    {{else}}
+                    <div>
+                        <label for="email-login">email:</label>
+                        <input type="text" id="email-login" />
+                    </div>
+                    <div>
+                        <label for="password-login">password:</label>
+                        <input type="password" id="password-login" />
+                    </div>
+                    <a href="/login">Login</a>
+                    {{/if}}
+                {{!-- </div> --}}
+                <div id="new-user">
+                    <a href="/new-user">New User</a>
+                </div>
 
-    </div>
-    
-    <!--<div>
-       <ol class="post-list">
-  {{#each posts}}
-  <li>
-    <article class="post">
-      <div class="meta">
-        {{Item}}...Price ${{price}}  
-      </div>
-    </article>
-  </li>
-  {{/each}}
-</ol> 
-    </div>
-</article>-->
+            </div>
+    {{!-- </div> --}}
+    {{!-- <div class="row"> --}}
+        {{!-- <div class="col-md-6"> --}}
+            <p>Welcome to Shopping Planner! This is an application <br> designed to make your shopping
+                experience <br>smooth
+                and efficient! <br>
+                With built in ability to add, store and create <br> new shopping lists that you can take<br>
+                with you on the go;
+                you are sure not <br>
+                forget an item on your list again. </p>
+        </div>
+    {{!-- </div> --}}
+{{!-- </div>  --}}
+</article>
+{{!-- </div> --}}
